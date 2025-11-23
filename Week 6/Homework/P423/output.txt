@@ -1,0 +1,31 @@
+CS160
+Introduction to Computer Science
+7
+Tran Nhu Khai
+24125045
+10 01 2006 
+3.2
+Nguyen Le Tran
+23108039
+17 08 2005 
+1.7
+Nguyen Dinh Minh Huy
+22098085
+18 07 2004 
+2.8
+Le Tran Hoang Long
+21050005
+24 12 2003 
+3.9
+Nguyen Anh Kiet
+20120057
+21 02 2002 
+0.36
+Tran Minh Khoa
+19090009
+19 09 2001 
+3.2
+Hoang Thien Nhan
+18018081
+11 08 2000 
+1.9
