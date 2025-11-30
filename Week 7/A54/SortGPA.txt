@@ -1,0 +1,9 @@
+Students sorted by GPA:
+1. Nguyen Anh Kiet
+2. Nguyen Le Tran
+3. Hoang Thien Nhan
+4. Nguyen Dinh Minh Huy
+5. Tran Nhu Khai
+6. Tran Minh Khoa
+7. Nguyen Quang Hieu
+8. Le Tran Hoang Long

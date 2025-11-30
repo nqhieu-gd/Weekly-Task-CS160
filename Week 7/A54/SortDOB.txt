@@ -1,0 +1,9 @@
+Students sorted by date of birth:
+1. Hoang Thien Nhan
+2. Tran Minh Khoa
+3. Nguyen Anh Kiet
+4. Le Tran Hoang Long
+5. Nguyen Dinh Minh Huy
+6. Nguyen Le Tran
+7. Tran Nhu Khai
+8. Nguyen Quang Hieu
