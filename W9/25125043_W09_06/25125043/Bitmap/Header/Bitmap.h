@@ -1,25 +1,27 @@
 #pragma once
-#include "..\..\25125043_W09_01\25125043\DynamicArray.h"
+#include "..\..\DynamicArray.h"
 
 struct Color {
-    float r, g, b;
+    unsigned char r, g, b;
 
     Color();
-    Color(float r, float g, float b);
+    Color(int r, int g, int b);
     ~Color();
 };
 
 class Image {
 private:
-    int width;
-    int height;
+    unsigned int width;
+    unsigned int height;
+    unsigned int padding;
 
-    DA<Color> colors;
 public:
     Image(int w, int h);
     ~Image();
+    DA<Color> colors;
 
     Color Getcolor(int x, int y) const;
     void Setcolor(const Color& color, int x, int y);
     void Export(const char* file) const;
+    void FlagGen();
 };

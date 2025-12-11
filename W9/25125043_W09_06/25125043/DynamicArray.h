@@ -17,7 +17,7 @@ public:
 
     void stretch() {
         T* temp = new T[this->size*2];
-        for (T t = 0; t < this->size; t++) {
+        for (int t = 0; t < this->size; t++) {
             temp[t] = p[t];
         }
         delete[] p;
@@ -33,13 +33,23 @@ public:
 
     void sub(T k, T x) {
         if (x > this->store) return;
-        for (T i = x - 1; i < this->store - 1; i++) p[i] = p[i + 1];
+        for (int i = x - 1; i < this->store - 1; i++) p[i] = p[i + 1];
         this->store--;
     }
 
     void display() {
-        for (T i = 0; i < this->store; i++) {
+        for (int i = 0; i < this->store; i++) {
             std::cout << p[i] << ' ';
         }
+    }
+
+    void setsize(int a) {
+        T* temp = new T[a];
+        for (int t = 0; t < a; t++) {
+            temp[a] = p[a];
+        }
+        delete[] p;
+        p = temp;
+        this->size = a;
     }
 };

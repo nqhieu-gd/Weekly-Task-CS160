@@ -32,7 +32,7 @@ void GenArray(int size, DA<int> &d) {
 
 void FArrayOut(std::ofstream& fout, DA<int> &d, const char* file) {
     fout.open(file);
-    if (!fout.is_open()) {
+    if (!fout) {
         std::cerr << "Error opening file.";
         return;
     }
@@ -54,7 +54,7 @@ void FiMed(DA<int> &d, int &med) {
 
 void FArrayIn(std::ifstream& fin, DA<int> &d, const char* file) {
     fin.open(file);
-    if (!fin.is_open()) {
+    if (!fin) {
         std::cerr << "Error opening file.";
         return;
     }
@@ -92,7 +92,7 @@ void GenArray(int size, DA<Date> &da) {
 
 void FDateOut(std::ofstream &fout, DA<Date> &da, const char* file) {
     fout.open(file);
-    if (!fout.is_open()) {
+    if (!fout) {
         std::cerr << "Error opening file.";
         return;
     }
@@ -120,7 +120,7 @@ void NewestDate(DA<Date> da, Date &d) {
 
 void FDateIn(std::ifstream &fin, DA<Date> &da, const char* file) {
     fin.open(file);
-    if (!fin.is_open()) {
+    if (!fin) {
         std::cerr << "Error opening file.";
         return;
     }
