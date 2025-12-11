@@ -5,7 +5,7 @@ template <typename T>
 struct DA {
 public:
     T* p;
-    int size = 1, store = 0;
+    int size = 1024, store = 0;
 
     void alloc() {
         p = new T[this->size];
@@ -13,6 +13,7 @@ public:
 
     void dealloc() {
         delete[] p;
+        this->size = 1024; this->store = 0;
     }
 
     void stretch() {
@@ -46,7 +47,7 @@ public:
     void setsize(int a) {
         T* temp = new T[a];
         for (int t = 0; t < a; t++) {
-            temp[a] = p[a];
+            temp[t] = p[t];
         }
         delete[] p;
         p = temp;

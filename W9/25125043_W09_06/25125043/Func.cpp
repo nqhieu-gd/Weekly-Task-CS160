@@ -136,9 +136,3 @@ void FDateIn(std::ifstream &fin, DA<Date> &da, const char* file) {
 void DisplayDate(Date d) {
     std::cout << d.day << '/' << d.month << d.year;
 }
-
-void MYCOPYFILE();
-
-void MYSPLITFILE();
-
-void MYMERGEFILE();
