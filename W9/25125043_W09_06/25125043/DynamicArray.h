@@ -46,8 +46,8 @@ public:
 
     void setsize(int a) {
         T* temp = new T[a];
-        for (int t = 0; t < a; t++) {
-            temp[t] = p[t];
+        for (int i = 0; i < ((a > this->store)? this->store : a); i++) {
+            temp[i] = p[i];
         }
         delete[] p;
         p = temp;

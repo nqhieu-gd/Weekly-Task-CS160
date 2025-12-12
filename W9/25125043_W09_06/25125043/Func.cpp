@@ -12,7 +12,7 @@ void Selection (int &choice) {
     }
 }
 
-void SubSelection (int choice) {
+void SubSelection (int &choice) {
     std::cout << "Choose a function: ";
     std::cin >> choice;
     if (choice < 1 || choice > 2) {
@@ -37,6 +37,7 @@ void FArrayOut(std::ofstream& fout, DA<int> &d, const char* file) {
         return;
     }
     int s;
+    std::cout << "How many array items to input? ";
     std::cin >> s;
     GenArray(s, d);
     fout.write((char*)&(d.store), sizeof(d.store));
@@ -47,9 +48,10 @@ void FArrayOut(std::ofstream& fout, DA<int> &d, const char* file) {
     fout.close();
 }
 
-void FiMed(DA<int> &d, int &med) {
+void FiMed(DA<int> d, int &med) {
     if (d.store%2 == 1) med = d.p[d.store/2];
     else med = (float) (d.p[d.store/2 - 1] + d.p[d.store/2])/2;
+    d.dealloc();
 }
 
 void FArrayIn(std::ifstream& fin, DA<int> &d, const char* file) {
@@ -64,27 +66,27 @@ void FArrayIn(std::ifstream& fin, DA<int> &d, const char* file) {
         fin.read((char*)&(d.p[i]), sizeof(d.p[i]));
     }
     fin.close();
-    d.dealloc();
 }
-
-Date date;
 
 void Date :: GenDate() {
     int a, b, c;
     std::cin >> a >> b >> c;
-    if (c % 4 == 0 && c % 100 != 0 || c %400 == 0) date.M[1] = 29;
-    if (b >= 0 && b <= 12 && a >= 0 && a <= date.M[b - 1]) {
-        date.day = a;
-        date.month = b;
-        date.year = c;
+    if (c % 4 == 0 && c % 100 != 0 || c %400 == 0) M[1] = 29;
+    if (b >= 0 && b <= 12 && a >= 0 && a <= M[b - 1]) {
+        day = a;
+        month = b;
+        year = c;
     }
-    else std::cerr << "Invalid input, please try again.";
+    else {
+        std::cerr << "Invalid input, please try again.\n";
+        GenDate();
+    }
 }
 
-void GenArray(int size, DA<Date> &da) {
+void GenArray(int s, DA<Date> &da) {
     Date k;
     da.alloc();
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < s; i++) {
         k.GenDate();
         da.push(k);
     }
@@ -97,6 +99,7 @@ void FDateOut(std::ofstream &fout, DA<Date> &da, const char* file) {
         return;
     }
     int s;
+    std::cout << "How many array items to input? ";
     std::cin >> s;
     GenArray(s, da);
     fout.write((char*) &(da.store), sizeof(da.store));
@@ -116,6 +119,7 @@ void NewestDate(DA<Date> da, Date &d) {
     for (int i = 1; i < da.store; i++) {
         if (CompDate(da.p[i], d)) d = da.p[i];
     }
+    da.dealloc();
 }
 
 void FDateIn(std::ifstream &fin, DA<Date> &da, const char* file) {
@@ -130,9 +134,8 @@ void FDateIn(std::ifstream &fin, DA<Date> &da, const char* file) {
         fin.read((char*)&(da.p[i]), sizeof(da.p[i]));
     }
     fin.close();
-    da.dealloc();
 }
 
 void DisplayDate(Date d) {
-    std::cout << d.day << '/' << d.month << d.year;
+    std::cout << d.day << '/' << d.month << '/' << d.year << '\n';
 }

@@ -16,16 +16,12 @@ int main() {
                 DA<int> d;
                 int med = 0;
                 if (choice == 1) {
-                    int s;
-                    std::cout << "How many array items to input? ";
-                    std::cin >> s;
-                    GenArray(s, d);
                     FArrayOut(fout, d, "Binary.bin");
                 }
                 else {
                     FArrayIn(fin, d, "Binary.bin");
                     FiMed(d, med);
-                    std::cout << med;
+                    std::cout << med << '\n';
                 }
                 Selection(choice);
                 break;
@@ -34,10 +30,6 @@ int main() {
                 SubSelection(choice);
                 DA<Date> da;
                 if (choice == 1) {
-                    int s;
-                    std::cout << "How many array items to input? ";
-                    std::cin >> s;
-                    GenArray(s, da);
                     FDateOut(fout, da, "Binary.bin");
                 }
                 else {
