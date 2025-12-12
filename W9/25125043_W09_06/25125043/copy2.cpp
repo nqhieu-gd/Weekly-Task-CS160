@@ -5,7 +5,7 @@ int main() {
 
     std::string st;
     std::getline(std::cin, st);
-    c.MYCOPYFILE(st);
+    c.MYSPLITFILE(st);
 
     return 0;
 }

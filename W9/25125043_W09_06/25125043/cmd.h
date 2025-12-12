@@ -12,6 +12,8 @@ struct cmd {
         int findLast(char a);
 
         std::string findFile();
+
+        std::string findExt();
     };
 
     struct des {
@@ -25,7 +27,9 @@ struct cmd {
 
     void copyf(std::string ptsource,std::string ptdes);
 
-    void MYSPLITFILE(std::string ptsource,std::string ptdes);
+    void MYSPLITFILE(std::string st);
 
-    void MYMERGEFILE(std::string ptsource,std::string ptdes);
+    void splitf(std::string ptsource,std::string ptdes, std::string types, int x);
+
+    void MYMERGEFILE(std::string st);
 };
