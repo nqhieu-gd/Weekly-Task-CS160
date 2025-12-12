@@ -3,20 +3,20 @@
 #include "DynamicArray.h"
 #include "Func.h"
 
-void Selection (int choice) {
-    std::cout << "Choose a problem:";
+void Selection (int &choice) {
+    std::cout << "Choose a problem: ";
     std::cin >> choice;
-    if (choice < 1 || choice > 6) {
-        std::cerr << "Invalid choice. Try again.";
+    if (choice < 0 || choice > 6) {
+        std::cerr << "Invalid choice. Try again. ";
         Selection(choice);
     }
 }
 
 void SubSelection (int choice) {
-    std::cout << "Choose a function:";
+    std::cout << "Choose a function: ";
     std::cin >> choice;
     if (choice < 1 || choice > 2) {
-        std::cerr << "Invalid choice. Try again.";
+        std::cerr << "Invalid choice. Try again. ";
         SubSelection(choice);
     }
 }
@@ -69,7 +69,7 @@ void FArrayIn(std::ifstream& fin, DA<int> &d, const char* file) {
 
 Date date;
 
-void GenDate() {
+void Date :: GenDate() {
     int a, b, c;
     std::cin >> a >> b >> c;
     if (c % 4 == 0 && c % 100 != 0 || c %400 == 0) date.M[1] = 29;

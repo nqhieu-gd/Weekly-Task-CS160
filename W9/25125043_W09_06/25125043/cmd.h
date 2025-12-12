@@ -14,6 +14,8 @@ struct cmd {
         std::string findFile();
 
         std::string findExt();
+
+        std::string findPart();
     };
 
     struct des {
@@ -32,4 +34,6 @@ struct cmd {
     void splitf(std::string ptsource,std::string ptdes, std::string types, int x);
 
     void MYMERGEFILE(std::string st);
+
+    void mergef(std::string ptsource,std::string ptdes);
 };

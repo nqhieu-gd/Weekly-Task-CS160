@@ -57,7 +57,7 @@ void Image :: Export(const char* file) const {
         fout.write((char*) pad, padding);
     }
     fout.close();
-    std::cout << "Successfully create flag of England as .bmp file.";
+    std::cout << "Successfully create flag of England as .bmp file.\n";
 }
 
 void Image :: FlagGen() {
